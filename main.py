@@ -1,3 +1,5 @@
+from typing import List
+
 
 # Tortoise and Hare Algorithm
 def findDuplicate(nums):
@@ -18,4 +20,16 @@ def findDuplicate(nums):
     return ptr1
 
 
-print(findDuplicate([2, 5, 6, 3, 4, 5, 7, 8, 1]))
+# LeetCode Q1
+def twoSum(nums: List[int], target: int) -> List[int]:
+    initMap = {}  # val : index
+
+    for i, n in enumerate(nums):
+        diff = target - n
+        if diff in initMap:
+            return [initMap[diff], i]
+        initMap[n] = i
+    return
+
+
+print(twoSum([2, 7, 11, 15], 18))
